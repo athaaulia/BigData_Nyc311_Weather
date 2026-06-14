@@ -53,9 +53,9 @@ Kedua *pipeline* bermuara pada Dashboard yang dibuat secara terpisah berdasarkan
 ### 1. Dashboard ELT 
 Menampilkan agregasi murni hasil transformasi SQL, difokuskan pada pemetaan *Borough* dan korelasi jam sibuk terhadap cuaca buruk.
 *   **Tangkapan Layar:** ![Dashboard ELT](SS_Dashboard_ELT.jpeg)
-*   **Link Dashboard:** `[Tambahkan link publik jika ada]`
+*   **Link Dashboard:** [Download File Dashboard ELT (.pbix)](Dasboard%20ELT%20-%20fix.pbix)
 
 ### 2. Dashboard ETL 
 Menampilkan agregasi hasil transformasi Pandas, difokuskan pada tren historis dan analisis proporsi tipe komplain.
 *   **Tangkapan Layar:** ![Dashboard ETL Pink](SS_Dashboard_ETL.jpeg)
-*   **Link Dashboard:** `[Tambahkan link publik jika ada]`
+*   **Link Dashboard:** [Download File Dashboard ETL (.pbix)](Dashboard%20ETL%20-%20fix.pbix)
