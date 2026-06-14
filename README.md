@@ -1,6 +1,3 @@
-# Deskripsi
-Komparasi Arsitektur Big Data: Pipeline ETL (Pandas) vs ELT (PostgreSQL). Proyek ini menganalisis korelasi layanan NYC 311 dan cuaca menggunakan Neon DB secara terpisah, dilengkapi perbandingan performa serta Dashboard Analitik.
-
 # Big Data Analytics: Komparasi Pipeline ETL vs ELT (NYC 311 & Weather)
 
 Proyek ini merupakan studi komparatif implementasi *data pipeline* menggunakan dua arsitektur berbeda: **ETL (Extract, Transform, Load)** dan **ELT (Extract, Load, Transform)**. Proyek ini ditujukan untuk menganalisis dampak cuaca terhadap pola permintaan layanan masyarakat di New York City (NYC 311) sebagai bagian dari pemenuhan Tugas Besar UAS Big Data.
