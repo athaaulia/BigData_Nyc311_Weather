@@ -1,0 +1,21 @@
+# Data Warehouse
+
+Folder ini berisi **hasil export tabel data warehouse** dari Neon DB (PostgreSQL) — data yang sudah dibersihkan, ditransformasi, dan terstruktur, siap dianalisis.
+
+## Warehouse ETL (Star Schema — Pricilia)
+Hasil export dari instans Neon pipeline ETL, terdiri dari 1 tabel fakta + 3 tabel dimensi:
+
+| File | Tabel | Ukuran | Keterangan |
+| :--- | :--- | :--- | :--- |
+| `dim_time.csv` | Dimensi Waktu | 630 KB | jam, hari, weekend, rush hour, bulan, tahun |
+| `dim_location.csv` | Dimensi Lokasi | 13 KB | borough, zip, koordinat |
+| `dim_complaint.csv` | Dimensi Keluhan | < 1 KB | jenis keluhan, encoding, agency |
+| `fact_311_requests.csv` | Tabel Fakta | ~51 MB | ~500.000 baris (measure + foreign key) |
+
+
+## Warehouse ELT (Flat Table — Atha)
+| File | Keterangan |
+| :--- | :--- |
+| `elt_fact_311_analytics.csv` | Tabel analitik datar hasil transformasi SQL di Neon (~493.923 baris) |
+
+> **Link export warehouse:** https://drive.google.com/drive/folders/17_OExVIq2gdsUXy6N8OYBGXPesKvHdyg?usp=drive_link
