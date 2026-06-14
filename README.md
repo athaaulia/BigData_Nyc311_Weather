@@ -100,7 +100,7 @@ Tabel Dimensi — dim_complaint
 | agency | Kode instansi penanggung jawab |
 | agency_name | Nama instansi penanggung jawab |
 
-**Struktur Tabel Analitik Final**
+**Struktur Tabel Analitik ELT Final**
 | Nama Kolom | Keterangan |
 | :--- | :--- |
 | `unique_key` | Primary Key, ID unik laporan 311 |
