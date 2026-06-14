@@ -42,6 +42,64 @@ Proyek ini menyediakan dua *notebook* Google Colab yang berjalan secara independ
 Meskipun pendekatannya berbeda, kedua *pipeline* bermuara pada satu struktur analitik akhir (*Data Mart*) yang memiliki skema serupa. Detail *Data Lineage* dan ERD dapat dilihat pada file `architecture_diagram.png`.
 ![Architecture Diagram](architecture_diagram.png)
 
+*Struktur Tabel Analitik Final (ETL — Star Schema)*
+
+Pipeline ETL menghasilkan *star schema: 1 tabel fakta (fact_311_requests) yang terhubung ke 3 tabel dimensi melalui *foreign key.
+
+Tabel Fakta — fact_311_requests
+
+| Nama Kolom | Keterangan |
+| :--- | :--- |
+| fact_id | Primary Key (surrogate key), nomor urut otomatis tiap baris fakta |
+| unique_key | ID unik laporan 311 (natural key, UNIQUE NOT NULL) |
+| time_id | Foreign Key → dim_time(time_id) |
+| location_id | Foreign Key → dim_location(location_id) |
+| complaint_id | Foreign Key → dim_complaint(complaint_id) |
+| response_time_hours | Durasi penyelesaian laporan dalam jam |
+| open_data_channel_type | Kanal masuknya laporan (ONLINE, PHONE, MOBILE, dll) |
+| weather_risk_score | Kombinasi risiko curah hujan dan angin kencang |
+| temperature_2m | Suhu udara (Normalisasi Min-Max) |
+| precipitation | Curah hujan (Imputasi & clipping IQR) |
+| wind_speed_10m | Kecepatan angin (Normalisasi Min-Max) |
+| is_rainy | 1 jika hujan saat laporan masuk, 0 jika tidak |
+| temp_category | Kategori suhu: cold / normal / hot |
+| rush_hour_bad_weather | 1 jika jam sibuk DAN cuaca buruk/hujan, 0 jika tidak |
+
+Tabel Dimensi — dim_time
+
+| Nama Kolom | Keterangan |
+| :--- | :--- |
+| time_id | Primary Key (surrogate key) |
+| created_hour | Waktu laporan dibulatkan ke jam (UNIQUE NOT NULL) |
+| hour_of_day | Jam kejadian (0–23) |
+| day_of_week | Hari dalam seminggu (0 = Senin … 6 = Minggu) |
+| is_weekend | 1 jika akhir pekan, 0 jika hari kerja |
+| is_rush_hour | 1 jika jam sibuk (07–09 & 16–19) |
+| month | Bulan laporan |
+| year | Tahun laporan |
+
+Tabel Dimensi — dim_location
+
+| Nama Kolom | Keterangan |
+| :--- | :--- |
+| location_id | Primary Key (surrogate key) |
+| borough | Nama wilayah (borough) |
+| incident_zip | Kode pos lokasi laporan |
+| latitude | Lintang (Normalisasi Min-Max) |
+| longitude | Bujur (Normalisasi Min-Max) |
+
+> Constraint: UNIQUE(borough, incident_zip) untuk mencegah duplikasi lokasi.
+
+Tabel Dimensi — dim_complaint
+
+| Nama Kolom | Keterangan |
+| :--- | :--- |
+| complaint_id | Primary Key (surrogate key) |
+| complaint_type | Jenis pengaduan (UNIQUE) |
+| complaint_type_enc | Hasil label encoding jenis pengaduan |
+| agency | Kode instansi penanggung jawab |
+| agency_name | Nama instansi penanggung jawab |
+
 **Struktur Tabel Analitik Final**
 | Nama Kolom | Keterangan |
 | :--- | :--- |
