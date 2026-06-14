@@ -50,12 +50,12 @@ Meskipun pendekatannya berbeda, kedua *pipeline* bermuara pada satu struktur ana
 ## 📈 Dashboard Analitik
 Kedua *pipeline* bermuara pada Dashboard yang dibuat secara terpisah berdasarkan instans Neon DB masing-masing.
 
-### 1. Dashboard ELT (Nuansa Biru - Atha)
+### 1. Dashboard ELT 
 Menampilkan agregasi murni hasil transformasi SQL, difokuskan pada pemetaan *Borough* dan korelasi jam sibuk terhadap cuaca buruk.
-*   **Tangkapan Layar:** `[Tambahkan link gambar dashboard biru di sini]`
+*   **Tangkapan Layar:** `![Dashboard ELT ](SS_Dashboard_ELT.jpeg)`
 *   **Link Dashboard:** `[Tambahkan link publik jika ada]`
 
-### 2. Dashboard ETL (Nuansa Pink - [Nama Rekan])
+### 2. Dashboard ETL 
 Menampilkan agregasi hasil transformasi Pandas, difokuskan pada tren historis dan analisis proporsi tipe komplain.
-*   **Tangkapan Layar:** `[Tambahkan link gambar dashboard pink di sini]`
+*   **Tangkapan Layar:** `![Dashboard ETL Pink](SS_Dashboard_ETL.jpeg)`
 *   **Link Dashboard:** `[Tambahkan link publik jika ada]`
