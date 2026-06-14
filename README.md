@@ -40,6 +40,7 @@ Proyek ini menyediakan dua *notebook* Google Colab yang berjalan secara independ
 
 ## 🗄️ Dokumentasi Data Warehouse
 Meskipun pendekatannya berbeda, kedua *pipeline* bermuara pada satu struktur analitik akhir (*Data Mart*) yang memiliki skema serupa. Detail *Data Lineage* dan ERD dapat dilihat pada file `architecture_diagram.png`.
+![Architecture Diagram](architecture_diagram.png)
 
 **Struktur Tabel Analitik Final**
 | Nama Kolom | Keterangan |
