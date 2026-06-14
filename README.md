@@ -42,7 +42,7 @@ Proyek ini menyediakan dua *notebook* Google Colab yang berjalan secara independ
 Meskipun pendekatannya berbeda, kedua *pipeline* bermuara pada satu struktur analitik akhir (*Data Mart*) yang memiliki skema serupa. Detail *Data Lineage* dan ERD dapat dilihat pada file `architecture_diagram.png`.
 ![Architecture Diagram](architecture_diagram.png)
 
-*Struktur Tabel Analitik Final (ETL — Star Schema)*
+**Struktur Tabel Analitik Final (ETL — Star Schema)**
 
 Pipeline ETL menghasilkan *star schema: 1 tabel fakta (fact_311_requests) yang terhubung ke 3 tabel dimensi melalui *foreign key.
 
