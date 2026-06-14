@@ -26,7 +26,7 @@ Proyek ini menyediakan dua *notebook* Google Colab yang berjalan secara independ
 
 ## 📂 Dokumentasi Dataset
 **Dataset untuk menjalankan pipeline disimpan di Google Drive karena ukurannya melebihi batas GitHub (830 MB).**
-*   **Link Penyimpanan Data Mentah:** [Masukkan Link Google Drive Anda Di Sini]
+*   **Link Penyimpanan Data Mentah:** https://drive.google.com/drive/folders/1rtflPT1ffWJuTZHfhqoU3A3-TvgjWqg4?usp=sharing 
 
 *(Untuk menjalankan ulang Colab, silakan unduh file dari tautan di atas dan letakkan sesuai path yang ada di script).*
 
