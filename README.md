@@ -4,14 +4,14 @@ Proyek ini merupakan studi komparatif implementasi *data pipeline* menggunakan d
 
 **Tim Pengembang (Computer Engineering, Telkom University):**
 1. **Atha Aulia Shidiq** - ELT Pipeline & Blue Dashboard
-2. **[Nama Rekan Anda]** - ETL Pipeline & Pink Dashboard
+2. **Pricilia Apriana** - ETL Pipeline & Pink Dashboard
 
 ---
 
 ## 📌 Deskripsi Proyek & Perbandingan Arsitektur
 Proyek ini mengekstraksi dataset yang sama (CSV NYC 311 dan JSON Open-Meteo API), namun diproses melalui dua *pipeline* yang berbeda untuk membandingkan efisiensi dan metodenya:
 
-*   **Arsitektur ETL (Oleh [Nama Rekan Anda]):**
+*   **Arsitektur ETL (Oleh Pricilia Apriana):**
     Data diekstrak, kemudian **ditransformasi secara ekstensif menggunakan Python (Pandas)** di memori Colab (pembersihan, normalisasi, dan *join*). Setelah data bersih dan membentuk tabel *Fact*, barulah data dimuat (*Load*) ke dalam *data warehouse* Neon DB.
 *   **Arsitektur ELT (Oleh Atha Aulia Shidiq):**
     Data diekstrak dan **langsung dimuat (Load) dalam kondisi mentah (Raw)** ke dalam tabel *staging* Neon DB. Seluruh proses transformasi, *parsing* JSON, dan *feature engineering* dieksekusi secara native di dalam *database* menggunakan instruksi **SQL murni**.
@@ -25,8 +25,18 @@ Proyek ini menyediakan dua *notebook* Google Colab yang berjalan secara independ
 *(Catatan: Kredensial Neon DB kami sembunyikan demi keamanan. Silakan gunakan connection string PostgreSQL Anda sendiri pada variabel `DATABASE_URL` jika ingin melakukan verifikasi run).*
 
 ## 📂 Dokumentasi Dataset
-*   **NYC 311 Service Requests:** Data historis keluhan non-darurat warga NYC (Filter Area 5 Borough).
-*   **Historical Weather API:** Data suhu, curah hujan, dan angin dari [Open-Meteo](https://open-meteo.com/).
+**Dataset untuk menjalankan pipeline disimpan di Google Drive karena ukurannya melebihi batas GitHub (830 MB).**
+*   **Link Penyimpanan Data Mentah:** [Masukkan Link Google Drive Anda Di Sini]
+
+*(Untuk menjalankan ulang Colab, silakan unduh file dari tautan di atas dan letakkan sesuai path yang ada di script).*
+
+1. **NYC 311 Service Requests**
+   - **Link Asal Dataset:** [NYC Open Data - 311 Service Requests](https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9)
+   - **Penjelasan Singkat:** Dataset ini merupakan rekaman historis dari sistem panggilan 311 kota New York untuk layanan non-darurat...
+
+2. **Historical Weather Data API**
+   - **Link Asal Dataset:** [Open-Meteo Historical Weather API](https://open-meteo.com/en/docs/historical-weather-api)
+   - **Penjelasan Singkat:** Dataset ini berisi rekaman data cuaca historis per jam yang ditarik secara dinamis...
 
 ## 🗄️ Dokumentasi Data Warehouse
 Meskipun pendekatannya berbeda, kedua *pipeline* bermuara pada satu struktur analitik akhir (*Data Mart*) yang memiliki skema serupa. Detail *Data Lineage* dan ERD dapat dilihat pada file `architecture_diagram.png`.
