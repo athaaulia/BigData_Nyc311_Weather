@@ -9,4 +9,4 @@ Folder ini berisi data mentah hasil tahap **Extract** — apa adanya dari sumber
 
 Karena `nyc311_raw.csv` berukuran besar (>100 MB, batas GitHub), file mentah lengkap disimpan di Google Drive:
 
-**Link data mentah:** https://drive.google.com/drive/folders/1rtflPT1ffWJuTZHfhqoU3A3-TvgjWqg4?usp=sharing
+**Link data mentah (raw):** https://drive.google.com/drive/folders/1cvt83YBdP3SFwJEGA5yqc11dfaa8upEP?usp=drive_link
